@@ -10,9 +10,10 @@ gem 'mocha', '>= 0.9.3'
 gem 'coderay', '>= 0.8.260'
 gem 'tzinfo', '>= 0.3.12'
 gem 'safe_erb','>= 0.1.2', :require => 'safe_erb', :git => 'https://github.com/emk/safe_erb.git'
+gem 'hoe', '~> 1.5.1'
 
 group :development, :test do
 #  gem 'brynary-webrat',  '>= 0.3.2.2'
   gem 'heroku'
-  gem 'hoe'
+#  gem 'hoe'
 end
