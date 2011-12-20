@@ -13,4 +13,6 @@ gem 'safe_erb','>= 0.1.2', :require => 'safe_erb', :git => 'https://github.com/e
 
 group :development, :test do
 #  gem 'brynary-webrat',  '>= 0.3.2.2'
+  gem 'heroku'
+  gem 'hoe'
 end
