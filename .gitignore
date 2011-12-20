@@ -4,6 +4,7 @@ Capfile
 config/database.yml
 config/deploy.rb
 db/*.sqlite3
+*.dump
 log/*.log
 public/cache
 tmp
