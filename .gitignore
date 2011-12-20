@@ -3,12 +3,8 @@
 Capfile
 config/database.yml
 config/deploy.rb
-config/initializers/session_store.rb
 db/*.sqlite3
 log/*.log
-public/assets
 public/cache
-public/plugin_assets
 tmp
-themes
 *~

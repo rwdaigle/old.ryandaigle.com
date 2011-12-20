@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% head %}
+  <title>{{ site.title }}{% if article %}: {{ article.title }}{% else%} - {{ site.subtitle }}{% endif %}</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- Use this RSS link if you are using FeedBurner (recommended) -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/RyansScraps" />
+  <link rel="openid.server" href="http://openid.claimid.com/server" />
+  <link rel="openid.delegate" href="http://openid.claimid.com/rwdaigle" />
+
+  {% comment %}
+  <!-- Include Mephisto's default RSS feed -->
+  {{ head.feed }}
+  {% endcomment %}
+
+  {{ 'prototype' | javascript }}
+  {{ 'scribbish' | javascript }}
+
+  {{ 'coderay' | stylesheet }}
+  {{ 'application' | stylesheet }}
+{% endhead %}
+<body>
+<div id="container">
+  <div id="header">
+    <h1><span><a href="/">{{ site.title }}</a></span></h1>
+    <h2>{{ site.subtitle }}</h2>
+  </div>
+
+  <div id="page">
+
+<!--
+<div id="yfactorial">
+  <a href="http://yfactorial.com/?utm_source=RyanDaigle.com&utm_medium=Corner%2BAd&utm_term=logomark&utm_campaign=rd.com%2Bcorner%2Bad"><span>Y|Factorial, LLC</span></a>
+</div>
+-->
+
+    <div id="content">
+      {{ content_for_layout }}
+      <script type="text/javascript">
+        //<![CDATA[
+        show_dates_as_local_time()
+        //]]>
+      </script>
+    </div>
+
+    <div id="sidebar">
+
+<div id="adzerk">
+    <div id="adzerk_ad_div">
+        <script type="text/javascript" src="http://rubyrow.net/Server/RUBY/DAIGLE/VERT"></script>
+    </div>
+    <p id="adzerk_by">
+        <a href='http://rubyrow.net'>Ads from Ruby Row</a>
+    </p>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="sidebar-node">
+<!--
+        <img src="/images/logomark_bw_sm.png" border="0" align="left"
+           style="padding-right: 5px;" /> -->
+        <a href="http://bracket7.com/?utm_source=RyanDaigle.com&utm_medium=Sidebar%2Blink&utm_campaign=RyanDaigle.com%2Bsidebar%2Blink">Ryan is available for hire at Bracket7, LLC</a>
+</div>
+<br/>
+<br/>
+<br/>
+
+  <div class="sidebar-node">
+  <img src="/images/twitter.jpg" align="left" />  
+  <a href="http://twitter.com/rwdaigle">Follow me on Twitter</a>
+      </div>
+<br/>
+
+  <div class="sidebar-node">
+  <img src="/images/wwr.png" align="left" />  
+   <a href="http://www.workingwithrails.com/recommendation/new/person/7379-ryan-daigle">Recommend me at WWR</a>
+      </div>
+      <br/>
+      <br/>
+
+<div class="sidebar-node">
+<p><a href="http://feeds.feedburner.com/RyansScraps"><img src="http://feeds.feedburner.com/~fc/RyansScraps?bg=99CCFF&amp;fg=444444&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+</div>
+<br/>
+<br/>
+
+      <!-- Delete the comment blocks if you'd like to display the search form -->
+      <div class="sidebar-node">
+        <div id="search" class="search">
+          <h3>Search</h3>
+          <form action="/search" id="sform" method="get" name="sform">
+            <p><input type="text" id="q" name="q" value="" /></p>
+          </form>
+        </div>
+        <br/>
+      </div>
+
+<!--
+<br/>
+     <div class="sidebar-node">
+       <a href="http://yfactorial.com/?utm_source=RyanDaigle.com&utm_medium=Sidebar%2BAd&utm_term=iPhone%2BDevelopment&utm_campaign=rd.com%2Bsidebar%2Bad">
+         <img src="http://ryandaigle.com/assets/2008/10/25/iphone_ad.png" width="250" height="50" />
+       </a>
+       <a href="http://peepcode.com/products/rails2-pdf">
+         <img src="/assets/2008/6/12/rails2_peepcode_small.png" border="0" />
+       </a>
+    </div>
+<br/>
+<br/>
+<br/>
+<br/>
+       -->
+<!--
+      <div class="sidebar-node">
+        <img src="http://yfactorial.com/images/yfactorial_badge_small.png" border="0" align="left"
+           style="padding-right: 5px;" />
+        <h3><a href="http://yfactorial.com/us/contact">Ryan is available for hire at Y|Factorial, LLC</a></h3>
+      </div>
+      <br/>
+      <br/>
+-->
+
+      {% if site.tags.size > 0 %}
+      <div class="sidebar-node">
+        <h3>Tags</h3>
+        <ul>
+        {% for tag in site.tags %}
+          <li>{{ tag | link_to_tag }} ({{ tag | tagged_articles | size }})</li>
+        {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+
+      <!-- Delete the comment blocks if you'd like to list out your sections -->
+      {% if site.sections.size > 0 %}
+      <div class="sidebar-node">
+        <h3>Sections</h3>
+        <ul>
+        {% for section in site.sections %}
+          <li>{{ section | link_to_section }} ({{ section.articles | size }})</li>
+        {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <!-- Delete the comment blocks if you'd like to display links for the monthly archive -->
+      {% if section.months.size > 0 %}
+      <div class="sidebar-node">
+        <h3>Archives</h3>
+        <ul>
+        {% for month in section.months %}
+          <li>{{ section | link_to_month: month }} ({{ section | monthly_articles: month | size }})</li>
+        {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <div class="sidebar-node">
+        <h3>Syndicate</h3>
+<ul>
+<li>
+<a href="http://feeds.feedburner.com/RyansScraps" title="RSS 2.0 feed">Articles</a>
+</li>
+<li>
+<a href="http://feeds.feedburner.com/RyansScrapsComments" title="Comments RSS 2.0 feed">Comments</a>
+</li>
+</ul>
+      </div>
+
+
+      <div class="sidebar-node">
+        <p><a href="http://mephistoblog.com/" class="powered">{{ 'mephisto-badge-tiny.png' | img_tag }}</a></p>
+      </div>
+
+    </div>
+    <br style="clear:both;" />
+
+  </div>
+
+  <div id="footer">
+    <hr />
+    <p><a href="/">{{ site.title }}</a></p>
+    <ul>
+      <li>powered by <a href="http://mephistoblog.com" target="_blank">Mephisto</a> /
+          styled with <a href="http://quotedprintable.com/pages/scribbish" target="_blank">scribbish</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-77805-8";
+urchinTracker();
+</script>
+
+<script src="http://feeds.feedburner.com/~s/RyansScraps" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" src="http://cetrk.com/pages/scripts/0000/8769.js"> </script>
+
+</body>
+</html>

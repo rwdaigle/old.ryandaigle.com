@@ -1,0 +1,52 @@
+GIT
+  remote: https://github.com/emk/safe_erb.git
+  revision: 59327ee8a18bbaa26c613aac5c6f1d9575aa6202
+  specs:
+    safe_erb (0.1.2)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    BlueCloth (1.0.1)
+    RedCloth (3.0.4)
+    actionmailer (2.2.2)
+      actionpack (= 2.2.2)
+    actionpack (2.2.2)
+      activesupport (= 2.2.2)
+    activerecord (2.2.2)
+      activesupport (= 2.2.2)
+    activeresource (2.2.2)
+      activesupport (= 2.2.2)
+    activesupport (2.2.2)
+    coderay (0.9.7)
+    hoe (2.12.5)
+      rake (~> 0.8)
+    liquid (1.9.0)
+      hoe (>= 1.5.1)
+    mocha (0.9.12)
+    rails (2.2.2)
+      actionmailer (= 2.2.2)
+      actionpack (= 2.2.2)
+      activerecord (= 2.2.2)
+      activeresource (= 2.2.2)
+      activesupport (= 2.2.2)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    rubyzip (0.9.4)
+    tzinfo (0.3.26)
+    will_paginate (2.3.15)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  BlueCloth (>= 1.0.0)
+  RedCloth (= 3.0.4)
+  coderay (>= 0.8.260)
+  liquid (~> 1.9.0)
+  mocha (>= 0.9.3)
+  rails (= 2.2.2)
+  rubyzip (>= 0.9.1)
+  safe_erb (>= 0.1.2)!
+  tzinfo (>= 0.3.12)
+  will_paginate (>= 2.2.2)
